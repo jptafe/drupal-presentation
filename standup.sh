@@ -7,31 +7,32 @@
 #ln -s vendor/drush/drush/drush ./
 composer install
 
-INSTALL
+#INSTALL
 sudo mysql -u root -e 'create database drupalprez';
-sudo mysql -u root -e "grant all privileges on drupalprez.* to dp@localhost identified by 'thisisapassword'";
-./drush si --db-url='mysql://dp:thisisapassword@localhost:3306/drupalprez'
+#sudo mysql -u root -e "grant all privileges on drupalprez.* to dp@localhost identified by 'thisisapassword'";
+#./drush si --db-url='mysql://dp:thisisapassword@localhost:3306/drupalprez'
+sudo mysql -u root drupalprez < sql/dump.sql 
 
-DEV SERVER
+#DEV SERVER
 ./drush rs
 
-BACKUP
-./drush cr
-./drush updb
-./drush sql:dump
-./drush cex
+#BACKUP
+#./drush cr
+#./drush updb
+#./drush sql:dump
+#./drush cex
 
-INTERROGATIONS
-./drush upwd admin 'thisisapassword'
-./drush cget system.site uuid
+#INTERROGATIONS
+#./drush upwd admin 'thisisapassword'
+#./drush cget system.site uuid
 
-INSTALL MODULE
-composer require drupal/ctools
-./drush pm:list
-./drush pm:enable ctools 
+#INSTALL MODULE
+#composer require drupal/ctools
+#./drush pm:list
+#./drush pm:enable ctools 
 
-RESTORE 
-drush cset system.site uuid <uuid> -y
+#RESTORE 
+#drush cset system.site uuid <uuid> -y
 
-REFERENCES
-https://drushcommands.com/drush-9x
+#REFERENCES
+#https://drushcommands.com/drush-9x
