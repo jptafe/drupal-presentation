@@ -1,7 +1,7 @@
 uuid: c86e70fa-c280-46e9-a2a6-6e36eced446a
-name: 'Drush Site-Install'
+name: 'Continuous Integration'
 mail: admin@example.com
-slogan: ''
+slogan: 'CI/CD Practices & Drupal'
 page:
   403: ''
   404: ''
